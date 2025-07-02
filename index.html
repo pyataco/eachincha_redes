@@ -123,15 +123,34 @@
     #intro button:hover {
       background: #e4e4e4;
     }
+
+    .heartbeat {
+  animation: latido 1.3s infinite;
+  display: inline-block;
+}
+
+@keyframes latido {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+}
+
   </style>
 </head>
 <body>
 
   <!-- Pantalla de bienvenida -->
-  <div id="intro">
-    <p style="font-size: 1.5em; margin-bottom: 20px;">🎶 Haz clic para comenzar</p>
-    <button onclick="startMusic()">Iniciar experiencia</button>
-  </div>
+<div id="intro">
+  <p style="font-size: 1.5em; margin-bottom: 20px;">
+  ¡Bienvenid@ a <strong>Esencia Ardiente</strong>! <br>
+    <span class="heartbeat" style="color:#a066ff;">💜</span>
+    <span class="heartbeat" style="color:#5ecbff;">💙</span>
+  </p>
+  <button onclick="startMusic()">Iniciar experiencia</button>
+</div>
 
   <!-- Audio de fondo -->
   <audio id="bgMusic" autoplay loop muted>
@@ -190,5 +209,8 @@
 
 </body>
 </html>
+
+
+
 
 
