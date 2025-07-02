@@ -129,24 +129,15 @@
 
   <!-- Pantalla de bienvenida -->
   <div id="intro">
-    <p style="font-size: 1.5em; margin-bottom: 20px;">🎶 ¡Bienvenid@ a Esencia Ardiente!</p>
+    <p style="font-size: 1.5em; margin-bottom: 20px;">🎶 Haz clic para comenzar</p>
     <button onclick="startMusic()">Iniciar experiencia</button>
   </div>
 
-  <!-- Audio -->
+  <!-- Audio de fondo -->
   <audio id="bgMusic" autoplay loop muted>
     <source src="musica.mp3" type="audio/mpeg">
     Tu navegador no soporta audio.
   </audio>
-
-  <script>
-    function startMusic() {
-      const audio = document.getElementById('bgMusic');
-      audio.muted = false;
-      audio.play();
-      document.getElementById('intro').style.display = 'none';
-    }
-  </script>
 
   <!-- Contenido principal -->
   <img src="logo.PNG" alt="Logo Esencia Ardiente Filial Chincha" class="logo"/>
@@ -165,6 +156,37 @@
       <i class="fab fa-youtube"></i> YouTube
     </a>
   </div>
+
+  <!-- Script de control -->
+  <script>
+    function startMusic() {
+      const audio = document.getElementById('bgMusic');
+      audio.muted = false;
+      audio.play();
+      document.getElementById('intro').style.display = 'none';
+    }
+
+    // Detener música al hacer clic en enlaces externos
+    const externalLinks = document.querySelectorAll('a[target="_blank"]');
+    externalLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        const audio = document.getElementById('bgMusic');
+        if (!audio.paused) {
+          audio.pause();
+          audio.currentTime = 0;
+        }
+      });
+    });
+
+    // Detener música si se cierra o navega fuera
+    window.addEventListener('beforeunload', () => {
+      const audio = document.getElementById('bgMusic');
+      if (!audio.paused) {
+        audio.pause();
+        audio.currentTime = 0;
+      }
+    });
+  </script>
 
 </body>
 </html>
