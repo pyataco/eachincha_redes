@@ -4,79 +4,115 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Esencia Ardiente Chincha</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
     body {
+      margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #e0aaff, #a5d8ff, #ffe066);
-      background-attachment: fixed;
-      color: #2d2d2d;
-      text-align: center;
+      min-height: 100vh;
       padding: 60px 20px;
+      text-align: center;
+      color: white;
+
+      background: linear-gradient(135deg, #bde0fe, #ffc8dd, #cdb4db);
+      background-attachment: fixed;
+      background-size: cover;
     }
 
     h1 {
-      font-size: 2.2em;
-      margin-bottom: 20px;
-      color: #6a0572;
-      text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+      font-size: 2.6em;
+      margin-bottom: 10px;
+      color: #ffffff;
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.25);
     }
 
     p.subtitulo {
       font-size: 1.2em;
-      margin-bottom: 30px;
-      color: #444;
+      margin-bottom: 40px;
+      color: #fff8f8;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+    }
+
+
+    .logo {
+      width: 200px;
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 5px;
     }
 
     .redes {
       display: flex;
       flex-direction: column;
-      gap: 15px;
-      max-width: 300px;
+      gap: 20px;
+      max-width: 340px;
       margin: auto;
     }
 
     .btn-red {
-      background: #6c63ff;
-      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
       text-decoration: none;
       padding: 14px 24px;
-      border-radius: 8px;
       font-size: 18px;
-      transition: 0.3s;
+      font-weight: 600;
+      color: white;
+      background: linear-gradient(135deg, #ff8ec9, #c77dff);
+      border: none;
+      border-radius: 12px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     }
 
     .btn-red:hover {
-      background: #4b47b2;
+      transform: scale(1.05);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+      background: linear-gradient(135deg, #d88dff, #ff9ed1);
     }
 
-    .logo {
-      width: 120px;
-      margin-bottom: 30px;
+    .btn-red i {
+      font-size: 20px;
     }
 
     @media (min-width: 600px) {
       .redes {
         flex-direction: row;
         justify-content: center;
+        flex-wrap: wrap;
       }
     }
   </style>
 </head>
 <body>
-  <img src="https://raw.githubusercontent.com/pyataco/eachincha_redes/main/logo.png" alt="Logo Esencia Ardiente Chincha" class="logo"/>
-  <h1>Esencia Ardiente Chincha</h1>
+  <!-- 🎵 Audio de fondo (invisible) -->
+<button onclick="document.getElementById('bgMusic').muted = false; document.getElementById('bgMusic').play();" style="position:fixed; bottom:20px; right:20px; padding:10px 16px; border:none; border-radius:8px; background:#ffffff33; color:white; backdrop-filter:blur(6px); font-weight:bold; cursor:pointer;">
+  🔊 Escuchar música
+</button>
+
+<audio id="bgMusic" autoplay loop muted>
+  <source src="musica.mp3" type="audio/mpeg">
+  Tu navegador no soporta audio.
+</audio>
+
+  <!-- Logo y título -->
+  <img src="logo.PNG" alt="Logo Esencia Ardiente Chincha" class="logo"/>
+  <h1>Esencia Ardiente<br>Chincha</h1>
   <p class="subtitulo">Integración Cultural - Síguenos en nuestras redes</p>
 
+  <!-- Botones de redes -->
   <div class="redes">
-    <a href="https://www.tiktok.com/@ejemplo" class="btn-red" target="_blank">TikTok</a>
-    <a href="https://www.facebook.com/ejemplo" class="btn-red" target="_blank">Facebook</a>
-    <a href="https://www.youtube.com/@ejemplo" class="btn-red" target="_blank">YouTube</a>
+    <a href="https://www.facebook.com/ejemplo" class="btn-red" target="_blank">
+      <i class="fab fa-facebook-f"></i> Facebook
+    </a>
+    <a href="https://www.tiktok.com/@ejemplo" class="btn-red" target="_blank">
+      <i class="fab fa-tiktok"></i> TikTok
+    </a>
+    <a href="https://www.youtube.com/@ejemplo" class="btn-red" target="_blank">
+      <i class="fab fa-youtube"></i> YouTube
+    </a>
   </div>
 </body>
 </html>
+
